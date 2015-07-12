@@ -1,0 +1,17 @@
+html,body{width:100%;height:100%;margin:0;}
+#background
+{
+	width:100%;
+	height:100%;
+	background:crimson;
+	text-align: center;
+	overflow: hidden;
+}
+.headLine
+{
+	margin: 20px;
+	padding: 20px;
+	font-size: 62px;
+  	font-family: Open Sans;
+  	color: #f2f2f2;
+}
