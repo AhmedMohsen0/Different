@@ -22,9 +22,5 @@ function add(n)
 	}
 	$('td').css('padding',parseInt( ( ( ( 520-( (2*(n+1))*2 ) )/ (2*n) )  )  +'px') );
 }
-<<<<<<< HEAD
-add(4);
-=======
-add(7);
->>>>>>> origin/master
 
+add(2);
