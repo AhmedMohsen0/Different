@@ -22,5 +22,5 @@ function add(n)
 	}
 	$('td').css('padding',parseInt( ( 520-( (2*n)*2 ) )/ (2*n)  +'px') );
 }
-add(1);
+add(4);
 
