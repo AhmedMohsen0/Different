@@ -16,8 +16,8 @@ html,body{width:100%;height:100%;margin:0;}
   	color: #f2f2f2;
 }
 #grid {
-	width: 425px;
-	height: 425px;
+	width: 450px;
+	height: 450px;
 	background: #66FFCC;
 	display: block;
 	margin: 0 auto;
@@ -26,11 +26,16 @@ html,body{width:100%;height:100%;margin:0;}
 }
 table {
 	border: none;
-	border-spacing: 5px;
+	border-spacing: 10px;
+}
+
+tr {
+	display: block;
+	margin: -10px 10px -10px -10px;
 }
 td {
 	padding: 50px;
 	background: green;
 	border: none;
-	border-radius: 10px;
+	border-radius: 5px;
 }

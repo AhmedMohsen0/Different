@@ -8,3 +8,18 @@ function changeBackground(id,color)
 var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 
 changeBackground('background',randomColor);
+
+function add(n)
+{
+	$('tr').remove();
+	for(var i = 0; i < n; i++)
+	{
+		$('table').append("<tr></tr>");
+	}
+	for(var i = 0; i < n; i++)
+	{
+		$('tr').append("<td></td>");
+	}
+}
+add(5);
+
