@@ -20,7 +20,11 @@ function add(n)
 	{
 		$('tr').append("<td></td>");
 	}
-	$('td').css('padding',parseInt( ( 520-( (2*n)*2 ) )/ (2*n)  +'px') );
+	$('td').css('padding',parseInt( ( ( ( 520-( (2*(n+1))*2 ) )/ (2*n) )  )  +'px') );
 }
+<<<<<<< HEAD
 add(4);
+=======
+add(7);
+>>>>>>> origin/master
 
