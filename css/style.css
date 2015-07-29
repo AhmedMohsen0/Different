@@ -69,3 +69,12 @@ button {
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
+#hint {
+	color: white;
+	font-family: Open Sans;
+	font-weight: lighter;
+	font-size: 20px;
+	position: relative;
+	top: 45%;
+	transform: translateY(-50%);
+}

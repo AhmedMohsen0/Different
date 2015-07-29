@@ -92,6 +92,7 @@ $(document).ready(function(){
 
 	$('button').click(function(){
 		$(this).css('display', 'none');
+		$('#hint').css('display', 'none');
 		$('.container').css('display', 'block');
 	});
 
