@@ -60,14 +60,14 @@ function changeCells()
 	var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 	if(randomColor.length < 7)
 		randomColor += '0';
-	console.log(randomColor);
+	// console.log(randomColor);
 	$('td').css('background', randomColor);
 
 	var diffCell = parseInt(Math.random()*(numberOfRow*numberOfRow));
-	console.log(diffCell);
+	console.log("different cell: " + diffCell);
 
 	var diffColor = LightenDarkenColor(randomColor, 10);
-	console.log(diffColor);
+	// console.log(diffColor);
 	$('td').eq(diffCell).css('background', diffColor);
 
 	$('td').eq(diffCell).addClass("different");
@@ -75,10 +75,12 @@ function changeCells()
 }
 
 
-add(8);
+add(numberOfRow);
 changeCells();
+var score = 0;
 
 $(document).ready(function(){
+	// add(numberOfRow);
 	$('.container').css('display', 'none');
 	$('button').hover(function(){
 		$(this).css('background', 'white');
@@ -98,8 +100,17 @@ $(document).ready(function(){
 
 	$('td').click(function(){
 		if ($(this).hasClass("different")) {	
+			score += 1;
+			numberOfRow += 1;
+			console.log(score);
 			alert("YES");
-			changeCells();
+			add(numberOfRow);	
+			changeCells();		
+		}
+		else
+		{
+			alert("no");
 		};
+
 	});
 });
