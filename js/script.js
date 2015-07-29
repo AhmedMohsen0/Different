@@ -66,7 +66,7 @@ function changeCells()
 	var diffCell = parseInt(Math.random()*(numberOfRow*numberOfRow));
 	console.log(diffCell);
 
-	var diffColor = LightenDarkenColor(randomColor, 20);
+	var diffColor = LightenDarkenColor(randomColor, 10);
 	console.log(diffColor);
 	$('td').eq(diffCell).css('background', diffColor);
 
@@ -75,10 +75,26 @@ function changeCells()
 }
 
 
-add(5);
+add(8);
 changeCells();
 
 $(document).ready(function(){
+	$('.container').css('display', 'none');
+	$('button').hover(function(){
+		$(this).css('background', 'white');
+		$(this).css('color', randomColor);
+	},
+	function(){
+		$(this).css('background', 'none');
+		$(this).css('color', 'white');
+	}
+	);
+
+	$('button').click(function(){
+		$(this).css('display', 'none');
+		$('.container').css('display', 'block');
+	});
+
 	$('td').click(function(){
 		if ($(this).hasClass("different")) {	
 			alert("YES");
