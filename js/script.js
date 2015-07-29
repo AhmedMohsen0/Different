@@ -25,8 +25,8 @@ function add(n)
 	$('td').css('padding',parseInt( ( ( ( 520-( (2*(n+1))*2 ) )/ (2*n) )  )  +'px') );
 }
 
-function LightenDarkenColor(col, amt) {
-  
+function LightenDarkenColor(col, amt) 
+{  
     var usePound = false;
   
     if (col[0] == "#") {
@@ -71,7 +71,6 @@ function changeCells()
 	$('td').eq(diffCell).css('background', diffColor);
 
 	$('td').eq(diffCell).addClass("different");
-
 }
 
 
@@ -98,14 +97,15 @@ $(document).ready(function(){
 		$('.container').css('display', 'block');
 	});
 
-	$('td').click(function(){
-		if ($(this).hasClass("different")) {	
+	jQuery(document).on('click','td',function(){
+		if ( $(this).hasClass("different") ) 
+		{	
 			score += 1;
 			numberOfRow += 1;
 			console.log(score);
 			alert("YES");
 			add(numberOfRow);	
-			changeCells();		
+			changeCells();	
 		}
 		else
 		{
