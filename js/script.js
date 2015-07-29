@@ -54,7 +54,8 @@ function LightenDarkenColor(col, amt)
     return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
   
 }
-function changeCells()
+
+function changeCells(opacity)
 {
 	$('td').removeClass("different");
 	var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
@@ -66,18 +67,20 @@ function changeCells()
 	var diffCell = parseInt(Math.random()*(numberOfRow*numberOfRow));
 	console.log("different cell: " + diffCell);
 
-	var diffColor = LightenDarkenColor(randomColor, 10);
+	var diffColor = LightenDarkenColor(randomColor, opacity);
 	// console.log(diffColor);
 	$('td').eq(diffCell).css('background', diffColor);
 
 	$('td').eq(diffCell).addClass("different");
 }
 
-
+var opacity = 50;
 add(numberOfRow);
-changeCells();
+changeCells(opacity);
+
 var score = 0;
-var levels = [0, 0, 1, 2, 4, 7, 12, 16]
+var levels = [0, 0, 1, 2, 4, 7, 12, 16, 22, 27, 33];
+var opacityLevel = [0, 0, 0, 5, 10, 15, 25, 30, 35, 40, 40];
 var i = 2;
 
 $(document).ready(function(){
@@ -106,12 +109,15 @@ $(document).ready(function(){
 			// numberOfRow += 1;
 			if(score >= levels[i])
 				i += 1;
-			if(i > levels.length)
+			if(i >= levels.length)
 				i = levels.length - 1;
-			console.log(score);
+			console.log("i : " + i);
+			console.log("score : " +score);
+			console.log("opacity : " + (opacity - opacityLevel[i]));
 			// alert("YES");
+
 			add(i);	
-			changeCells();	
+			changeCells(opacity - opacityLevel[i]);	
 		};
 	});
 });
