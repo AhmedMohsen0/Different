@@ -77,6 +77,8 @@ function changeCells()
 add(numberOfRow);
 changeCells();
 var score = 0;
+var levels = [0, 0, 1, 2, 4, 7, 12, 16]
+var i = 2;
 
 $(document).ready(function(){
 	// add(numberOfRow);
@@ -101,16 +103,15 @@ $(document).ready(function(){
 		if ( $(this).hasClass("different") ) 
 		{	
 			score += 1;
-			numberOfRow += 1;
+			// numberOfRow += 1;
+			if(score >= levels[i])
+				i += 1;
+			if(i > levels.length)
+				i = levels.length - 1;
 			console.log(score);
-			alert("YES");
-			add(numberOfRow);	
+			// alert("YES");
+			add(i);	
 			changeCells();	
-		}
-		else
-		{
-			alert("no");
 		};
-
 	});
 });
