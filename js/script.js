@@ -56,7 +56,10 @@ function LightenDarkenColor(col, amt) {
 }
 function changeCells()
 {
-	var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+	$('td').removeClass("different");
+	var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+	if(randomColor.length < 7)
+		randomColor += '0';
 	console.log(randomColor);
 	$('td').css('background', randomColor);
 
