@@ -81,10 +81,11 @@ button {
 }
 #score {
 	width: 80px;
-	height: 65px;
+	height: 80px;
+	left:30px;
 	background: white;
 	position: fixed;
-	background: #DCDDDE;
+	background: #222;
 	border: 2px solid white;
 	font-size: 0;
 	/*vertical-align: top;*/
@@ -97,17 +98,18 @@ button {
 	font-weight: lighter;
 	text-align: center;
 	/*margin: 0 auto;*/
-	color: white;
+	color: #eee;
+	padding: 7px;
 }
 #time {
 	width: 80px;
 	height: 80px;
-	right: 0px;
+	right: 30px;
 	background: white;
 	position: fixed;
-	background: #DCDDDE;
+	background: #222;
 	border: 2px solid white;
-	border-radius: 100%;
+	/*border-radius: 100%;*/
 	font-size: 0;
 }
 #time p {
@@ -117,6 +119,6 @@ button {
 	font-size: 20px;
 	font-weight: lighter;
 	text-align: center;
-	color: white;
-	padding: 4px;
+	color: #eee;
+	padding: 7px;
 }

@@ -113,7 +113,7 @@ $(document).ready(function(){
 			$('#time').html('<p>'+time+'</p>');
 			if(time == 0)
 			{
-				alert('game over');
+				// alert('game over');
 				$('.container').fadeOut();
 			}
 			else{time--;}
