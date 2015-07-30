@@ -55,12 +55,14 @@ function LightenDarkenColor(col, amt)
   
 }
 
+var rColor;
 function changeCells(opacity)
 {
 	$('td').removeClass("different");
 	var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 	if(randomColor.length < 7)
 		randomColor += '0';
+	rColor = randomColor;
 	// console.log(randomColor);
 	$('td').css('background', randomColor);
 
@@ -86,6 +88,8 @@ var i = 2;
 $(document).ready(function(){
 	// add(numberOfRow);
 	$('.container').css('display', 'none');
+	$('#score').html('<p>' + score + '</p>');
+	
 	$('button').hover(function(){
 		$(this).css('background', 'white');
 		$(this).css('color', randomColor);
@@ -115,9 +119,9 @@ $(document).ready(function(){
 			console.log("score : " +score);
 			console.log("opacity : " + (opacity - opacityLevel[i]));
 			// alert("YES");
-
 			add(i);	
 			changeCells(opacity - opacityLevel[i]);	
+			$('#score').html('<p>' + score + '</p>');
 		};
 	});
 });
