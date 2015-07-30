@@ -1,4 +1,6 @@
-
+// GLOBAL VARIABLE
+time = 60;
+timer = '';
 //function to change background color by id 
 function changeBackground(id,color) 
 {
@@ -104,6 +106,18 @@ $(document).ready(function(){
 		$(this).css('display', 'none');
 		$('#hint').css('display', 'none');
 		$('.container').css('display', 'block');
+
+		timer = setInterval(function()
+		{
+			
+			$('#time').html('<p>'+time+'</p>');
+			if(time == 0)
+			{
+				alert('game over');
+				$('.container').fadeOut();
+			}
+			else{time--;}
+		}, 1000);
 	});
 
 	jQuery(document).on('click','td',function(){
