@@ -90,6 +90,8 @@ var i = 2;
 $(document).ready(function(){
 	// add(numberOfRow);
 	$('.container').css('display', 'none');
+	$('#result').hide();
+	$('#again').css('display', 'none');
 	$('#score').html('<p>' + score + '</p>');
 	
 	$('button').hover(function(){
@@ -102,7 +104,7 @@ $(document).ready(function(){
 	}
 	);
 
-	$('button').click(function(){
+	$('#start').click(function(){
 		$(this).css('display', 'none');
 		$('#hint').css('display', 'none');
 		$('.container').css('display', 'block');
@@ -115,6 +117,9 @@ $(document).ready(function(){
 			{
 				// alert('game over');
 				$('.container').fadeOut();
+				$('#result').show();
+				$('#result').html('Your score' + '<p>' + score + '</p>');
+				$('#again').css('display', 'block');
 			}
 			else{time--;}
 		}, 1000);
@@ -137,5 +142,22 @@ $(document).ready(function(){
 			changeCells(opacity - opacityLevel[i]);	
 			$('#score').html('<p>' + score + '</p>');
 		};
+	});
+
+	//play again
+	jQuery(document).on('click', '#again', function(){
+		score = 0;
+		time = 60;
+		i = 2;
+		opacity = 50;
+
+		$('#result').hide();
+		$('#again').css('display', 'none');
+		randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+		changeBackground('background', randomColor);
+		add(i);
+		changeCells(opacity - opacityLevel[i]);
+		$('.container').css('display', 'block');
+		$('#score').html('<p>' + 0 + '</p>');
 	});
 });

@@ -101,6 +101,15 @@ button {
 	color: #eee;
 	padding: 7px;
 }
+#scoreHint {
+	position: fixed;
+	left: 45px;
+	top: 60px;
+	font-family: Open sans;
+	font-size: 20px;
+	font-size: lighter;
+	color: white;
+}
 #time {
 	width: 80px;
 	height: 80px;
@@ -121,4 +130,27 @@ button {
 	text-align: center;
 	color: #eee;
 	padding: 7px;
+}
+#timeHint {
+	position: fixed;
+	right: 50px;
+	top: 60px;
+	font-family: Open sans;
+	font-size: 20px;
+	font-size: lighter;
+	color: white;
+}
+#result {
+	display: block;
+	font-family: Open sans;
+	font-weight: lighter;
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	top: 50%;
+	vertical-align: middle;
+}
+#again {
+	position: relative;
+	top: 15%;
 }
